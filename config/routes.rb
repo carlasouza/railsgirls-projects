@@ -1,4 +1,7 @@
 Ideias::Application.routes.draw do
+  resources :events
+
+
   resources :ideas
 
 
