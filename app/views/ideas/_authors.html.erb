@@ -1,26 +1,12 @@
-<h1>Listing authors</h1>
+<h3>Autoras</h3>
 
-<table>
-  <tr>
-    <th>Nome</th>
-    <th>Link</th>
-    <th>Nivel</th>
-    <th>Bio</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
+<ul>
 <% @idea.authors.each do |author| %>
-  <tr>
-    <td><%= author.nome %></td>
-    <td><%= author.link %></td>
-    <td><%= author.nivel %></td>
-    <td><%= author.bio %></td>
-    <td><%= link_to 'Edit', edit_event_idea_author_path(@event,@idea,author) %></td>
-  </tr>
+  <li>
+    <p><%= link_to author.nome, event_idea_author_path(@event,@idea,author) %></p>
+  </li>
 <% end %>
-</table>
+</ul>
 
 <br />
 

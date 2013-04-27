@@ -1,5 +1,5 @@
 <div class="container">
-<h1>Ideias do evento <%= @event.name %></h1>
+<h3>Ideias do evento <%= @event.name %></h3>
 
 
 <ul class="ideas">
@@ -16,6 +16,7 @@
     	<%= idea.authors.map {|a| a.nome}.join ',' %>
     	<p><%= idea.link %></p>
     	<p><%= link_to 'Edit', edit_event_idea_path(@event, idea) %></p>
+      
 	</li>
 <% end %>
 </ul>

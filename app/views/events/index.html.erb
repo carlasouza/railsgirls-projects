@@ -13,7 +13,8 @@
       <br />
       <p><%= event.city %></p>
       <p><%= event.country %></p>
-      <p><%= link_to 'Edit', edit_event_path(event) %></p>
+      <%= link_to 'Edit', edit_event_path(event) %>
+      <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Deletar o evento. Sério?' } %>
   </li>
 <% end %>
 </ul>
