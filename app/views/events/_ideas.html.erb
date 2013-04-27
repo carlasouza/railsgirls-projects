@@ -9,14 +9,13 @@
 <% @event.ideas.each do |idea| %>
   	<li class="idea">
   		<div align="center">
-    	<h3><%= link_to idea.nome, event_idea_path(@event, idea) %></h3>
-    </div>
+    	  <h3><%= link_to idea.nome, event_idea_path(@event, idea) %></h3>
+      </div>
     	<br />
     	Authors:
     	<%= idea.authors.map {|a| a.nome}.join ',' %>
     	<p><%= idea.link %></p>
-    	<p><%= link_to 'Edit', edit_event_idea_path(@event, idea) %></p>
-      
+
 	</li>
 <% end %>
 </ul>
