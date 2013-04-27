@@ -1,28 +1,23 @@
 <h1>Listing events</h1>
 
-<table>
-  <tr>
-    <th>City</th>
-    <th>Data</th>
-    <th>Country</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
+<ul class="ideas">
+  <li class="idea">
+    <%= link_to 'New Event', new_event_path %>
+  </li>
 <% @events.each do |event| %>
-  <tr>
-    <td><%= event.name %></td>
-    <td><%= event.city %></td>
-    <td><%= event.data %></td>
-    <td><%= event.country %></td>
-    <td><%= link_to 'Show', event %></td>
-    <td><%= link_to 'Edit', edit_event_path(event) %></td>
-    <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+    <li class="idea">
+      <div align="center">
+      <h3><%= link_to event.name, event %></h3>
+    </div>
+      <br />
+      <p><%= event.city %></p>
+      <p><%= event.country %></p>
+      <p><%= link_to 'Edit', edit_event_path(event) %></p>
+  </li>
 <% end %>
-</table>
+</ul>
 
 <br />
 
-<%= link_to 'New Event', new_event_path %>
+

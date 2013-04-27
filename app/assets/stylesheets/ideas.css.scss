@@ -26,3 +26,23 @@ h1, h2, h3, h4 {
 th {
 	color: $text_color;
 }
+
+.ideas {
+	list-style-type: none;
+}
+
+.idea {
+	background: #fff;
+	width: 223px;
+	float: left;
+	margin-right: 20px;
+	border-style: dotted solid;
+	border-width: 1px;
+	height: 157px;
+	margin-bottom: 20px;
+	padding: 20px;
+}
+
+a {
+	color: $text_color;
+}
