@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130427160519) do
+ActiveRecord::Schema.define(:version => 20130427181815) do
 
   create_table "authors", :force => true do |t|
     t.string   "nome"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20130427160519) do
     t.string   "country"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.string   "name"
   end
 
   create_table "ideas", :force => true do |t|
@@ -47,5 +48,15 @@ ActiveRecord::Schema.define(:version => 20130427160519) do
   end
 
   add_index "ideas", ["event_id"], :name => "index_ideas_on_event_id"
+
+  create_table "ideia", :force => true do |t|
+    t.string   "nome"
+    t.text     "descricao"
+    t.string   "link"
+    t.string   "keywords"
+    t.string   "repositorio"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
 end

@@ -1,3 +1,28 @@
 // Place all the styles related to the Ideas controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$bg_color: #fff;
+$text_color: #d3360b;
+
+body{
+	margin: 0;
+	background: $bg_color;
+	font-family: "Helvetica", "OpenSans", Arial;
+}
+
+.container {
+	width: 900px;
+	margin: 0 auto;
+	background: #fff;
+	padding: 10px;
+}
+
+h1, h2, h3, h4 {
+	margin: 0;
+	color: #000;
+}
+
+th {
+	color: $text_color;
+}

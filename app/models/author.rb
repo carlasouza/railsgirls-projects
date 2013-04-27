@@ -4,7 +4,6 @@ class Author < ActiveRecord::Base
   validates_presence_of :nome
   validates_inclusion_of :sexo, in: ['female', 'male']
   validates_format_of :nome, with: /^[a-zA-Z]+$/
-  validates_format_of :email, with: /^[.]+@[.]+$i/, :message => "Ta errado amg"
 
 
 

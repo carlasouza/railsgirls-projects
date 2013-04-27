@@ -1,25 +1,15 @@
-<h1>Listing ideas</h1>
+<div class="container">
+<h1>Ideias do evento <%= @event.name %></h1>
 
 <table>
-  <tr>
-    <th>Nome</th>
-    <th>Descricao</th>
-    <th>Link</th>
-    <th>Keywords</th>
-    <th>Repositorio</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
 <% @ideas.each do |idea| %>
   <tr>
-    <td><%= idea.nome %></td>
-    <td><%= idea.descricao %></td>
+    <td><%= link_to idea.nome, event_idea_path(@event, idea) %></td>
+    <% idea.authors.each do |author| %>
+    <h1><%= author.name %>
+      <% end %>
     <td><%= idea.link %></td>
-    <td><%= idea.keywords %></td>
-    <td><%= idea.repositorio %></td>
-    <td><%= link_to 'Show', event_idea_path(@event, idea) %></td>
     <td><%= link_to 'Edit', edit_event_idea_path(@event, idea) %></td>
   </tr>
 <% end %>
@@ -28,3 +18,4 @@
 <br />
 
 <%= link_to 'New Idea', new_event_idea_path %>
+</div>
