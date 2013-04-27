@@ -11,18 +11,16 @@
     <th></th>
   </tr>
 
-<% @authors.each do |author| %>
+<% @idea.authors.each do |author| %>
   <tr>
     <td><%= author.nome %></td>
     <td><%= author.link %></td>
     <td><%= author.nivel %></td>
     <td><%= author.bio %></td>
     <td><%= link_to 'Edit', edit_event_idea_author_path(@event,@idea,author) %></td>
-    <td><%= link_to 'Destroy', event_idea_author, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Author', new_event_idea_author_path %>

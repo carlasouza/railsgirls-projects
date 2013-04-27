@@ -24,6 +24,8 @@ class AuthorsController < ApplicationController
   # GET /authors/new
   # GET /authors/new.json
   def new
+    @event = Event.find params[:event_id]
+    @idea = Idea.find params[:idea_id]
     @author = Author.new
 
     respond_to do |format|
@@ -34,17 +36,21 @@ class AuthorsController < ApplicationController
 
   # GET /authors/1/edit
   def edit
+    @event = Event.find params[:event_id]
+    @idea = Idea.find params[:idea_id]
     @author = Author.find(params[:id])
   end
 
   # POST /authors
   # POST /authors.json
-  def create
+ def create
+    @event = Event.find params[:event_id]
+    @idea = Idea.find params[:idea_id]
     @author = Author.new(params[:author])
 
     respond_to do |format|
       if @author.save
-        format.html { redirect_to @author, notice: 'Author was successfully created.' }
+        format.html { redirect_to [@event,@idea], notice: 'Author was successfully created.' }
         format.json { render json: @author, status: :created, location: @author }
       else
         format.html { render action: "new" }
@@ -55,12 +61,14 @@ class AuthorsController < ApplicationController
 
   # PUT /authors/1
   # PUT /authors/1.json
-  def update
+ def update
+    @event = Event.find params[:event_id]
+    @idea = Idea.find params[:idea_id]
     @author = Author.find(params[:id])
 
     respond_to do |format|
       if @author.update_attributes(params[:author])
-        format.html { redirect_to @author, notice: 'Author was successfully updated.' }
+        format.html { redirect_to [@event,@idea], notice: 'Author was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

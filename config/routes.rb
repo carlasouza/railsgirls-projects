@@ -1,15 +1,9 @@
 Ideias::Application.routes.draw do
-  resources :events
-
-
-  resources :ideas
-
-
-  resources :authors
-
-
-  resources :ideia
-
+  resources :events do
+    resources :ideas do
+      resources :authors
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

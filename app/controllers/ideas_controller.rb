@@ -2,7 +2,8 @@ class IdeasController < ApplicationController
   # GET /ideas
   # GET /ideas.json
   def index
-    @ideas = Idea.all
+    @event = Event.find params[:event_id]
+    @ideas = @event.ideas
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,6 +14,7 @@ class IdeasController < ApplicationController
   # GET /ideas/1
   # GET /ideas/1.json
   def show
+    @event = Event.find params[:event_id]
     @idea = Idea.find(params[:id])
 
     respond_to do |format|
@@ -24,7 +26,9 @@ class IdeasController < ApplicationController
   # GET /ideas/new
   # GET /ideas/new.json
   def new
+    @event = Event.find params[:event_id]
     @idea = Idea.new
+    @idea.event = @event
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,11 +44,12 @@ class IdeasController < ApplicationController
   # POST /ideas
   # POST /ideas.json
   def create
+    @event = Event.find params[:event_id]
     @idea = Idea.new(params[:idea])
 
     respond_to do |format|
       if @idea.save
-        format.html { redirect_to @idea, notice: 'Idea was successfully created.' }
+        format.html { redirect_to [@event,@idea], notice: 'Idea was successfully created.' }
         format.json { render json: @idea, status: :created, location: @idea }
       else
         format.html { render action: "new" }

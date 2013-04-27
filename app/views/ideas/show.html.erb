@@ -26,5 +26,7 @@
 </p>
 
 
-<%= link_to 'Edit', edit_idea_path(@idea) %> |
-<%= link_to 'Back', ideas_path %>
+<%= render 'authors' %>
+
+<%= link_to 'Edit', edit_event_idea_path(@event,@idea) %> |
+<%= link_to 'Back', event_ideas_path %>
