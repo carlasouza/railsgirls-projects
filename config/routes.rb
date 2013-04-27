@@ -1,4 +1,10 @@
 Ideias::Application.routes.draw do
+  resources :ideas
+
+
+  resources :authors
+
+
   resources :ideia
 
 
