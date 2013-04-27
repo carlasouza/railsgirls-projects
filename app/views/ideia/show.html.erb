@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nome:</b>
+  <%= @ideium.nome %>
+</p>
+
+<p>
+  <b>Descricao:</b>
+  <%= @ideium.descricao %>
+</p>
+
+<p>
+  <b>Link:</b>
+  <%= @ideium.link %>
+</p>
+
+<p>
+  <b>Keywords:</b>
+  <%= @ideium.keywords %>
+</p>
+
+<p>
+  <b>Repositorio:</b>
+  <%= @ideium.repositorio %>
+</p>
+
+
+<%= link_to 'Edit', edit_ideium_path(@ideium) %> |
+<%= link_to 'Back', ideia_path %>
