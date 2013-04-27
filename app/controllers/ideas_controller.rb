@@ -46,6 +46,7 @@ class IdeasController < ApplicationController
   def create
     @event = Event.find params[:event_id]
     @idea = Idea.new(params[:idea])
+    @idea.event = @event
 
     respond_to do |format|
       if @idea.save

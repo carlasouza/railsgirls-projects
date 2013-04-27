@@ -13,6 +13,8 @@ class AuthorsController < ApplicationController
   # GET /authors/1
   # GET /authors/1.json
   def show
+    @event = Event.find params[:event_id]
+    @idea = Idea.find params[:idea_id]
     @author = Author.find(params[:id])
 
     respond_to do |format|
@@ -27,6 +29,7 @@ class AuthorsController < ApplicationController
     @event = Event.find params[:event_id]
     @idea = Idea.find params[:idea_id]
     @author = Author.new
+    @author.idea = @idea
 
     respond_to do |format|
       format.html # new.html.erb
@@ -47,6 +50,10 @@ class AuthorsController < ApplicationController
     @event = Event.find params[:event_id]
     @idea = Idea.find params[:idea_id]
     @author = Author.new(params[:author])
+    @author.idea = @idea
+
+    @event = Event.find params[:event_id]
+    @idea = Idea.find params[:idea_id]
 
     respond_to do |format|
       if @author.save
