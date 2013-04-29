@@ -6,47 +6,47 @@ $bg_color: #fff;
 $text_color: #d3360b;
 
 body{
-	margin: 0;
-	background: $bg_color;
-	font-family: "Helvetica", "OpenSans", Arial;
+  margin: 0;
+  background: $bg_color;
+  font-family: "Helvetica", "OpenSans", Arial;
 }
 
 .container {
-	width: 900px;
-	margin: 0 auto;
-	background: #fff;
-	padding: 10px;
+  width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 10px;
 }
 
 h1, h2, h3, h4 {
-	margin: 0;
-	color: #000;
+  margin: 0;
+  color: #000;
 }
 
 th {
-	color: $text_color;
+  color: $text_color;
 }
 
 .ideas {
-	list-style-type: none;
+  list-style-type: none;
 }
 
 .idea {
-	background: #fff;
-	width: 223px;
-	float: left;
-	margin-right: 20px;
-	border-style: dotted solid;
-	border-width: 1px;
-	height: 157px;
-	margin-bottom: 20px;
-	padding: 20px;
+  background: #fff;
+  width: 223px;
+  float: left;
+  margin-right: 20px;
+  border-style: dotted solid;
+  border-width: 1px;
+  height: 157px;
+  margin-bottom: 20px;
+  padding: 20px;
 }
 
 li {
-	list-style-type: none;
+  list-style-type: none;
 }
 
 a {
-	color: $text_color;
+  color: $text_color;
 }
